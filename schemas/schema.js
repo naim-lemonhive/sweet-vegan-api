@@ -5,17 +5,32 @@ import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // We import object and document schemas
-import blockContent from './objects/blockContent'
+import {blockContent, customText, customButton} from './typography'
 import product from './documents/product'
 import nutritionalItem from './objects/nutritionalItem'
 import user from './documents/user'
 import review from './documents/review'
+import home from './page/home/home'
+import pageContents from './page/home/pageContents'
+import metadata from './objects/metadata'
+import customImage from './objects/customImage'
+import navItems from './page/layout/navItems'
+import header from './page/layout/header'
+import footer from './page/layout/footer'
+
+import { 
+  pageHeroSection, 
+  pageNewsletter, 
+  pageOurStory, 
+  pageProductFlavour, 
+  pageProductSpeciality
+} from './page/home/contents';
 
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
-  name: 'default',
+  name: "default",
   // Then proceed to concatenate our document type
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
@@ -24,9 +39,24 @@ export default createSchema({
     product,
     user,
     review,
+    home,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     blockContent,
     nutritionalItem,
+    pageContents,
+    metadata,
+    customImage,
+    navItems,
+    header,
+    footer,
+    customButton,
+    customText,
+    // page contents
+    pageHeroSection,
+    pageNewsletter,
+    pageOurStory,
+    pageProductFlavour,
+    pageProductSpeciality,
   ]),
-})
+});

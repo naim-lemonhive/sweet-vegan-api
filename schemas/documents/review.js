@@ -14,7 +14,7 @@ export default {
     {
       title: "Review",
       name: "reviewDescription",
-      type: "blockContent",
+      type: "text",
     },
     {
       title: "User Name",

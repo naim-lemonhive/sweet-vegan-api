@@ -1,4 +1,5 @@
 import {MdOutlineStorefront as icon} from 'react-icons/md';
+import { colors } from '../typography/sizeAndColors';
 
 export default {
   title: "Product",
@@ -21,6 +22,16 @@ export default {
       },
     },
     {
+      name: "productColor",
+      Title: "Select a color",
+      type: "string",
+      options: {
+        list: [
+          ...colors
+        ]
+      }
+    },
+    {
       title: "Price",
       name: "price",
       type: "number",
@@ -33,12 +44,12 @@ export default {
     {
       title: "Description",
       name: "description",
-      type: "blockContent",
+      type: "text",
     },
     {
       title: "Ingredients",
       name: "ingredients",
-      type: "blockContent",
+      type: "text",
     },
     {
       title: "Nutritional Infromation",
